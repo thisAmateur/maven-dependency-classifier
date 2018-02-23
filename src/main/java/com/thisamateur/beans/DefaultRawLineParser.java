@@ -5,12 +5,25 @@ import java.util.List;
 
 import com.thisamateur.utils.Utils;
 
+/**
+ * 默认的原始依赖文件解析类
+ * created by thisAmateur at 2018/2/23
+ */
 public class DefaultRawLineParser implements IRawLineParser{
     private String dependencyFilePath;
+
+    /**
+     * 默认构造函数
+     * @param path 原始依赖文件的路径
+     */
     public DefaultRawLineParser(String path) {
         this.dependencyFilePath = path;
     }
 
+    /**
+     * 执行解析动作
+     * @return JarLine列表
+     */
     public List<JarLine> parse() {
         List<JarLine> result = new ArrayList<JarLine>();
         List<String> rawLineList = Utils.readLine(dependencyFilePath);

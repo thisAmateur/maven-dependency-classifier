@@ -8,8 +8,19 @@ import org.apache.commons.io.FileUtils;
 
 import com.thisamateur.beans.JarLine;
 
+/**
+ * 工具方法类
+ * created by thisAmateur at 2018/2/23
+ */
 public class Utils {
     public static final String SPT = System.getProperty("file.separator");
+
+    /**
+     * 从jar仓库中复制某个jar到目标路径
+     * @param jarLine JarLine对象
+     * @param jarRepoPath jar仓库的路径
+     * @param targetDir 目标路径
+     */
     public static void copyJarFromRepoToDir(JarLine jarLine, String jarRepoPath, String targetDir) {
         String jarFilePath = null;
         if (jarRepoPath.endsWith(Utils.SPT)) {
@@ -24,7 +35,15 @@ public class Utils {
             e.printStackTrace();
         }
     }
-    
+
+    /**
+     * 根据jar的信息，在当前路径下创建一个新的文件夹
+     * 文件夹命名：artifactId-version
+     * example：junit-4.12
+     * @param jarLine JarLine对象
+     * @param nowDir 当前路径
+     * @return 新的文件夹的路径
+     */
     public static String mkDirOfJarInNowDir(JarLine jarLine, String nowDir) {
         String jarDirPath = null;
         if (nowDir.endsWith(Utils.SPT)) {
@@ -40,7 +59,12 @@ public class Utils {
         }
         return jarDirPath;
     }
-    
+
+    /**
+     * 返回当前路径的父目录路径
+     * @param nowDir 当前路径
+     * @return 父目录路径
+     */
     public static String backToParentDir(String nowDir) {
         File parentDir = new File(nowDir).getParentFile();
         String path = null;
@@ -52,7 +76,12 @@ public class Utils {
         }
         return path;
     }
-    
+
+    /**
+     * 读取文件，按行解析成String列表
+     * @param filePath 文件路径
+     * @return String列表
+     */
     public static List<String> readLine(String filePath) {
         List<String> result = null;
         try {
