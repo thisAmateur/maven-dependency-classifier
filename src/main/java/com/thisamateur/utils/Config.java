@@ -4,17 +4,17 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /**
- * ¶ÁÈ¡ÅäÖÃÏî
+ * è¯»å–é…ç½®é¡¹
  * created by thisAmateur at 2018/2/23
  */
 public class Config {
-    /** ÎÄ¼ş¼ĞÂ·¾¶£¬¸ÃÂ·¾¶´æ´¢ÁËËùÓĞ mvn dependency:copy-dependencies µÃµ½µÄÏîÄ¿ÒÀÀµµÄjar°ü*/
+    /** æ–‡ä»¶å¤¹è·¯å¾„ï¼Œè¯¥è·¯å¾„å­˜å‚¨äº†æ‰€æœ‰ mvn dependency:copy-dependencies å¾—åˆ°çš„é¡¹ç›®ä¾èµ–çš„jaråŒ…*/
     public static final String JAR_REPO_PATH = "jarRepoPath";
 
-    /** ËùÓĞjar°ü¹éÀàºóµÄ»ùÂ·¾¶ */
+    /** æ‰€æœ‰jaråŒ…å½’ç±»åçš„åŸºè·¯å¾„ */
     public static final String TARGET_BASE_PATH = "targetBasePath";
 
-    /** mvn dependency:tree Éú³ÉµÄ¹¤³ÌÒÀÀµÎÄ¼şµÄÂ·¾¶ */
+    /** mvn dependency:tree ç”Ÿæˆçš„å·¥ç¨‹ä¾èµ–æ–‡ä»¶çš„è·¯å¾„ */
     public static final String DEPENDENCY_FILE_PATH = "dependencyFilePath";
 
     private static Properties prop = new Properties();
@@ -29,9 +29,9 @@ public class Config {
     }
 
     /**
-     * ¸ù¾İÅäÖÃÏîµÄkey»ñÈ¡¶ÔÓ¦µÄvalue
-     * @param key ÅäÖÃÏîµÄkeyÖµ
-     * @return ÅäÖÃÏîµÄvalue
+     * æ ¹æ®é…ç½®é¡¹çš„keyè·å–å¯¹åº”çš„value
+     * @param key é…ç½®é¡¹çš„keyå€¼
+     * @return é…ç½®é¡¹çš„value
      */
     public static String getProperty(String key) {
         return Config.prop.getProperty(key);

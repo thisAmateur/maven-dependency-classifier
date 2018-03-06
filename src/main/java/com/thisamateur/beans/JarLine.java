@@ -35,10 +35,19 @@ public class JarLine {
         }
         String jarInfo = rawLine.substring(indexOfFirstCharactor);
         String[] jarInfoArray = jarInfo.split(":");
-        groupId = jarInfoArray[0];
-        artifactId = jarInfoArray[1];
-        fileType = jarInfoArray[2];
-        version = jarInfoArray[3];
+        if (jarInfoArray.length < 6) {
+            groupId = jarInfoArray[0];
+            artifactId = jarInfoArray[1];
+            fileType = jarInfoArray[2];
+            version = jarInfoArray[3];
+        }else if (jarInfoArray.length == 6) {
+            groupId = jarInfoArray[0];
+            artifactId = jarInfoArray[1];
+            fileType = jarInfoArray[2];
+            version = jarInfoArray[4] + "-" + jarInfoArray[3];
+        }else {
+            throw new RuntimeException("rawLine format error");
+        }
         level = indexOfFirstCharactor/ 3;
     }
     

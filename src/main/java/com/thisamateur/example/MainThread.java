@@ -22,10 +22,10 @@ public class MainThread {
         String jarRepoPath = Config.getProperty(Config.JAR_REPO_PATH);
         String targetBasePath = Config.getProperty(Config.TARGET_BASE_PATH);
         String dependencyFilePath = Config.getProperty(Config.DEPENDENCY_FILE_PATH);
-        // step1£º½âÎöÔ­Ê¼ÒÀÀµÎÄ¼ş
+        // step1ï¼šè§£æåŸå§‹ä¾èµ–æ–‡ä»¶
         IRawLineParser parser = new DefaultRawLineParser(dependencyFilePath);
         List<JarLine> jarLineList = parser.parse();
-        // step2£ºÖ´ĞĞ·ÖÀà
+        // step2ï¼šæ‰§è¡Œåˆ†ç±»
         IClassifier classifier = new DefaultClassifier(targetBasePath, jarRepoPath, jarLineList);
         classifier.classify();
         System.out.println("end");

@@ -9,17 +9,17 @@ import org.apache.commons.io.FileUtils;
 import com.thisamateur.beans.JarLine;
 
 /**
- * ¹¤¾ß·½·¨Àà
+ * å·¥å…·æ–¹æ³•ç±»
  * created by thisAmateur at 2018/2/23
  */
 public class Utils {
     public static final String SPT = System.getProperty("file.separator");
 
     /**
-     * ´Ójar²Ö¿âÖĞ¸´ÖÆÄ³¸öjarµ½Ä¿±êÂ·¾¶
-     * @param jarLine JarLine¶ÔÏó
-     * @param jarRepoPath jar²Ö¿âµÄÂ·¾¶
-     * @param targetDir Ä¿±êÂ·¾¶
+     * ä»jarä»“åº“ä¸­å¤åˆ¶æŸä¸ªjaråˆ°ç›®æ ‡è·¯å¾„
+     * @param jarLine JarLineå¯¹è±¡
+     * @param jarRepoPath jarä»“åº“çš„è·¯å¾„
+     * @param targetDir ç›®æ ‡è·¯å¾„
      */
     public static void copyJarFromRepoToDir(JarLine jarLine, String jarRepoPath, String targetDir) {
         String jarFilePath = null;
@@ -37,12 +37,12 @@ public class Utils {
     }
 
     /**
-     * ¸ù¾İjarµÄĞÅÏ¢£¬ÔÚµ±Ç°Â·¾¶ÏÂ´´½¨Ò»¸öĞÂµÄÎÄ¼ş¼Ğ
-     * ÎÄ¼ş¼ĞÃüÃû£ºartifactId-version
-     * example£ºjunit-4.12
-     * @param jarLine JarLine¶ÔÏó
-     * @param nowDir µ±Ç°Â·¾¶
-     * @return ĞÂµÄÎÄ¼ş¼ĞµÄÂ·¾¶
+     * æ ¹æ®jarçš„ä¿¡æ¯ï¼Œåœ¨å½“å‰è·¯å¾„ä¸‹åˆ›å»ºä¸€ä¸ªæ–°çš„æ–‡ä»¶å¤¹
+     * æ–‡ä»¶å¤¹å‘½åï¼šartifactId-version
+     * exampleï¼šjunit-4.12
+     * @param jarLine JarLineå¯¹è±¡
+     * @param nowDir å½“å‰è·¯å¾„
+     * @return æ–°çš„æ–‡ä»¶å¤¹çš„è·¯å¾„
      */
     public static String mkDirOfJarInNowDir(JarLine jarLine, String nowDir) {
         String jarDirPath = null;
@@ -61,9 +61,9 @@ public class Utils {
     }
 
     /**
-     * ·µ»Øµ±Ç°Â·¾¶µÄ¸¸Ä¿Â¼Â·¾¶
-     * @param nowDir µ±Ç°Â·¾¶
-     * @return ¸¸Ä¿Â¼Â·¾¶
+     * è¿”å›å½“å‰è·¯å¾„çš„çˆ¶ç›®å½•è·¯å¾„
+     * @param nowDir å½“å‰è·¯å¾„
+     * @return çˆ¶ç›®å½•è·¯å¾„
      */
     public static String backToParentDir(String nowDir) {
         File parentDir = new File(nowDir).getParentFile();
@@ -78,9 +78,9 @@ public class Utils {
     }
 
     /**
-     * ¶ÁÈ¡ÎÄ¼ş£¬°´ĞĞ½âÎö³ÉStringÁĞ±í
-     * @param filePath ÎÄ¼şÂ·¾¶
-     * @return StringÁĞ±í
+     * è¯»å–æ–‡ä»¶ï¼ŒæŒ‰è¡Œè§£ææˆStringåˆ—è¡¨
+     * @param filePath æ–‡ä»¶è·¯å¾„
+     * @return Stringåˆ—è¡¨
      */
     public static List<String> readLine(String filePath) {
         List<String> result = null;

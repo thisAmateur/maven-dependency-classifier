@@ -36,7 +36,8 @@ public class DefaultClassifier implements IClassifier{
         for (int i = 0; i < jarLineList.size(); i++) {
             now = jarLineList.get(i);
             
-            if (now.getLevel() == 0) {
+            if (now.getLevel() == 0 && i == 0) {
+                Utils.copyJarFromRepoToDir(now, jarRepoPath, nowPath);
                 continue;
             }
 
