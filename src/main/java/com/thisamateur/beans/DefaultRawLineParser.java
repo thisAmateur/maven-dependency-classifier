@@ -37,7 +37,15 @@ public class DefaultRawLineParser implements IRawLineParser{
                 isValid = false;
                 continue;
             }
+            if (isValid && rawLine.startsWith("[INFO]                               ")) {
+                isValid = false;
+                continue;
+            }
             if (isValid) {
+                JarLine tempJar = new JarLine(rawLine);
+                if (!("jar".equalsIgnoreCase(tempJar.getFileType()))) {
+                    continue;
+                }
                 result.add(new JarLine(rawLine));
             }
         }
